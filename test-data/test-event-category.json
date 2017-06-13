@@ -1,0 +1,413 @@
+{
+  "Records": [
+    {
+      "eventID": "ed4e674966d476e396075cd1aed6a88f",
+      "eventName": "INSERT",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-west-1",
+      "dynamodb": {
+        "ApproximateCreationDateTime": 1493815800,
+        "Keys": {
+          "name": {
+            "S": "create-collector"
+          },
+          "status": {
+            "S": "finish"
+          }
+        },
+        "NewImage": {
+          "date": {
+            "S": "Fri May 12 2017 10:02:17 GMT+0000 (UTC)"
+          },
+          "expires": {
+            "N": "1494658800"
+          },
+          "instanceName": {
+            "S": "Betty"
+          },
+          "jobReport": {
+            "M": {
+              "fiesta": {
+                "M": {
+                  "finish": {
+                    "S": "Fri May 12 2017 10:02:17 GMT+0000 (UTC)"
+                  },
+                  "itemCount": {
+                    "N": "40"
+                  },
+                  "start": {
+                    "S": "Fri May 12 2017 09:59:16 GMT+0000 (UTC)"
+                  },
+                  "tasks": {
+                    "L": [
+                      {
+                        "M": {
+                          "name": {
+                            "S": "start"
+                          },
+                          "options": {
+                            "M": {
+                              "action": {
+                                "S": "completed"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "M": {
+                          "name": {
+                            "S": "fetch"
+                          },
+                          "options": {
+                            "M": {
+                              "action": {
+                                "S": "completed"
+                              },
+                              "itemType": {
+                                "S": "item"
+                              },
+                              "proxy": {
+                                "BOOL": true
+                              },
+                              "type": {
+                                "S": "raw"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "M": {
+                          "name": {
+                            "S": "parse"
+                          },
+                          "options": {
+                            "M": {
+                              "action": {
+                                "S": "completed"
+                              },
+                              "itemCount": {
+                                "N": "324"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "M": {
+                          "name": {
+                            "S": "save"
+                          },
+                          "options": {
+                            "M": {
+                              "action": {
+                                "S": "completed"
+                              },
+                              "type": {
+                                "S": "raw"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "M": {
+                          "name": {
+                            "S": "diff"
+                          },
+                          "options": {
+                            "M": {
+                              "action": {
+                                "S": "completed"
+                              },
+                              "itemCount": {
+                                "N": "40"
+                              },
+                              "itemType": {
+                                "S": "item"
+                              },
+                              "key": {
+                                "S": "20170511"
+                              },
+                              "source": {
+                                "S": "s3_text"
+                              },
+                              "type": {
+                                "S": "raw"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "M": {
+                          "name": {
+                            "S": "dup_check"
+                          },
+                          "options": {
+                            "M": {
+                              "action": {
+                                "S": "completed"
+                              },
+                              "msg": {
+                                "S": "saved all items to GDD"
+                              },
+                              "refCount": {
+                                "N": "0"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "M": {
+                          "name": {
+                            "S": "save"
+                          },
+                          "options": {
+                            "M": {
+                              "action": {
+                                "S": "completed"
+                              },
+                              "type": {
+                                "S": "diff"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "M": {
+                          "name": {
+                            "S": "additional_data"
+                          },
+                          "options": {
+                            "M": {
+                              "action": {
+                                "S": "completed"
+                              },
+                              "itemCount": {
+                                "N": "40"
+                              },
+                              "proxy": {
+                                "BOOL": true
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "M": {
+                          "name": {
+                            "S": "save"
+                          },
+                          "options": {
+                            "M": {
+                              "action": {
+                                "S": "completed"
+                              },
+                              "type": {
+                                "S": "store"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "M": {
+                          "name": {
+                            "S": "save"
+                          },
+                          "options": {
+                            "M": {
+                              "action": {
+                                "S": "completed"
+                              },
+                              "destination": {
+                                "S": "dynamo"
+                              },
+                              "type": {
+                                "S": "store"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "M": {
+                          "name": {
+                            "S": "images"
+                          },
+                          "options": {
+                            "M": {
+                              "action": {
+                                "S": "completed"
+                              },
+                              "totalImages": {
+                                "N": "170"
+                              },
+                              "type": {
+                                "S": "additional"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "M": {
+                          "name": {
+                            "S": "index"
+                          },
+                          "options": {
+                            "M": {
+                              "action": {
+                                "S": "completed"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "M": {
+                          "name": {
+                            "S": "finish"
+                          },
+                          "options": {
+                            "M": {
+                              "action": {
+                                "S": "completed"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "warnings": {
+                    "L": [
+                      {
+                        "M": {
+                          "bucket": {
+                            "S": "store.collectors-db.com"
+                          },
+                          "error": {
+                            "M": {
+                              "code": {
+                                "S": "NoSuchKey"
+                              },
+                              "extendedRequestId": {
+                                "S": "kFYYD1jLETc+CbjnutAdp6e+tb/At8BMyIh0c8NUj+G44dRA38JObtECuFQJo6zqbL9XyQEgm6c="
+                              },
+                              "message": {
+                                "S": "The specified key does not exist."
+                              },
+                              "region": {
+                                "NULL": true
+                              },
+                              "requestId": {
+                                "S": "1948743A002D23DC"
+                              },
+                              "retryable": {
+                                "BOOL": false
+                              },
+                              "retryDelay": {
+                                "N": "27.972940410796078"
+                              },
+                              "statusCode": {
+                                "N": "404"
+                              },
+                              "time": {
+                                "S": "2017-05-12T09:59:16.710Z"
+                              }
+                            }
+                          },
+                          "file": {
+                            "S": "fiesta/store/data/2017/05/12/raw.json"
+                          },
+                          "level": {
+                            "S": "warn"
+                          },
+                          "message": {
+                            "S": "The specified key does not exist."
+                          },
+                          "timestamp": {
+                            "S": "2017-05-12T09:59:16.715Z"
+                          }
+                        }
+                      },
+                      {
+                        "M": {
+                          "bucket": {
+                            "S": "store.collectors-db.com"
+                          },
+                          "error": {
+                            "M": {
+                              "code": {
+                                "S": "NoSuchKey"
+                              },
+                              "extendedRequestId": {
+                                "S": "e6LWZ8QsgdFHGeOODbxTqmOn3a4Sws8SBt3OJeqFJOnj73ihPt83MJpq7p/97vBD0ntIXAjGyio="
+                              },
+                              "message": {
+                                "S": "The specified key does not exist."
+                              },
+                              "region": {
+                                "NULL": true
+                              },
+                              "requestId": {
+                                "S": "3A2BD55D6D88729A"
+                              },
+                              "retryable": {
+                                "BOOL": false
+                              },
+                              "retryDelay": {
+                                "N": "81.88511154922786"
+                              },
+                              "statusCode": {
+                                "N": "404"
+                              },
+                              "time": {
+                                "S": "2017-05-12T09:59:17.658Z"
+                              }
+                            }
+                          },
+                          "file": {
+                            "S": "fiesta/store/data/2017/05/12/diff.json"
+                          },
+                          "level": {
+                            "S": "warn"
+                          },
+                          "message": {
+                            "S": "The specified key does not exist."
+                          },
+                          "timestamp": {
+                            "S": "2017-05-12T09:59:17.663Z"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "name": {
+            "S": "fiesta-daily"
+          },
+          "status": {
+            "S": "finish"
+          },
+          "type": {
+            "S": "standard"
+          }
+        },
+        "SequenceNumber": "8947100000000006106609775",
+        "SizeBytes": 107,
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-west-1:727578435510:table/daily_logs/stream/2017-05-01T12:58:08.477"
+    }
+  ]
+}

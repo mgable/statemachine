@@ -1,0 +1,17 @@
+{
+  "name": "statemachine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "statemachine.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.6.14",
+    "commander": "^2.9.0",
+    "dynamodb-marshaler": "^2.0.0",
+    "underscore": "^1.8.3"
+  }
+}
