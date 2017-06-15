@@ -29,24 +29,24 @@
 	var state = program.state || null;
 
 	var	startUpEvents = ["create-proxy", "create-collector"],
-		standardCategories = ["advertising_tins", "golden_age_comic_books", "tobacco_tins", "fiesta"],
+		standardCategories = ["fiesta"], //"advertising_tins", "golden_age_comic_books", "tobacco_tins", 
 		tearDownEvents = ["destroy-collector", "destroy-proxy"],
 		conditions = _makeConditions(startUpEvents, standardCategories, tearDownEvents),
 		stateMapper = [
 			{"name": "off"},
-			{"name": "starting-up", "bounds": "create-proxy-start"}, 
-			{"name": "all-ready", "bounds": "create-collector-finish", "action": "release"}, 
-			{"name": "start-standard", "bounds": "standard-start", "action": "isFinished"}, 
-			{"name": "finish-standard", "bounds": "standard-finish", "action": "destroy"}, 
-			{"name": "shutting-down", "bounds": "destroy-collector-start"}, 
-			{"name": "finished", "bounds": "destroy-proxy-finish"}
+			{"name": "starting-up", "bounds": "create-collector-finish"}, 
+			{"name": "all-ready", "bounds": "standard-start", "action": "release"}, 
+			{"name": "start-standard", "bounds": "standard-finish", "exclusive": true/*, "action": "isFinished"*/}, 
+			{"name": "finish-standard", "bounds": "destroy-collector-start", "action": "destroy", "exclusive": true}, 
+			{"name": "shutting-down", "bounds": "destroy-proxy-finish"},
+			{"name": "finished"}
 		];
 
 	var actions = {
 		"release": _release,
 		"isFinished": _isFinished,
 		"destroy": _destroy
-	}
+	};
 
 	function _conditionStateMapper(){
 		var currentStateValue = statemachine.getState();
@@ -58,23 +58,30 @@
 		// 	return currentStateValue >= bounds || bounds === 0;
 		// });
 
-		return _.reduce(stateMapper, (prime, state) => {
+		return _.find(stateMapper, (state) => {
 			var bounds = state.bounds ? statemachine.getValue(state.bounds) : 0 ;
+			console.info("checking " + state.name);
 			console.info("bounds " + bounds);
-			console.info(currentStateValue > bounds);
-			return currentStateValue > bounds ? state : prime;
-		});
+
+			if (currentStateValue === 0) return true;
+
+			var lowerBounds = state.exclusive ? (bounds - 1) : (bounds * 2 - 1) 
+
+			return currentStateValue <  lowerBounds ? true : false;;
+		}) || _.last(stateMapper);
 	}
 
 	function _release(){
 		console.info("release the jobs!");
+		console.info("start standard");
 	}
 
 	function _isFinished(){
-		console.info("Am I finished");
+		console.info("Am I finished?");
 	}
 
 	function _destroy(){
+		console.info("finished standard");
 		console.info("destroy collector and proxy");
 	}
 

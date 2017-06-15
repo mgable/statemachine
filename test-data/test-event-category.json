@@ -10,7 +10,7 @@
         "ApproximateCreationDateTime": 1493815800,
         "Keys": {
           "name": {
-            "S": "create-collector"
+            "S": "destroy-proxy"
           },
           "status": {
             "S": "finish"
